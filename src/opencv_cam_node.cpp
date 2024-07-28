@@ -76,7 +76,8 @@ namespace opencv_cam
       next_stamp_ = now();
 
     } else {
-      capture_ = std::make_shared<cv::VideoCapture>(cxt_.index_);
+
+      capture_ = std::make_shared<cv::VideoCapture>(cxt_.index_+ cv::CAP_V4L);
 
       if (!capture_->isOpened()) {
         RCLCPP_ERROR(get_logger(), "cannot open device %d", cxt_.index_);
@@ -93,6 +94,10 @@ namespace opencv_cam
 
       if (cxt_.fps_ > 0) {
         capture_->set(cv::CAP_PROP_FPS, cxt_.fps_);
+      }
+
+      if (cxt_.codec_mjpg_) {
+        capture_->set(cv::CAP_PROP_FOURCC, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'));
       }
 
       double width = capture_->get(cv::CAP_PROP_FRAME_WIDTH);
