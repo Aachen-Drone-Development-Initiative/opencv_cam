@@ -60,6 +60,11 @@ namespace opencv_cam
         return;
       }
 
+      capture_->set(cv::CAP_PROP_AUTO_EXPOSURE, 1);
+      capture_->set(cv::CAP_PROP_EXPOSURE, cxt_.exposure_);
+      capture_->set(cv::CAP_PROP_BRIGHTNESS, cxt_.brightness_);
+      capture_->set(cv::CAP_PROP_SATURATION, 124);
+
       if (cxt_.fps_ > 0) {
         // Publish at the specified rate
         publish_fps_ = cxt_.fps_;
