@@ -85,9 +85,10 @@ namespace opencv_cam
       capture_ = std::make_shared<cv::VideoCapture>(cxt_.index_+ cv::CAP_V4L);
 
       capture_->set(cv::CAP_PROP_AUTO_EXPOSURE, 1);
+      capture_->set(cv::CAP_PROP_AUTO_WB, cxt_.auto_wb_);
       capture_->set(cv::CAP_PROP_EXPOSURE, cxt_.exposure_);
       capture_->set(cv::CAP_PROP_BRIGHTNESS, cxt_.brightness_);
-      capture_->set(cv::CAP_PROP_SATURATION, 124);
+      capture_->set(cv::CAP_PROP_SATURATION, cxt_.saturation_);
 
       if (!capture_->isOpened()) {
         RCLCPP_ERROR(get_logger(), "cannot open device %d", cxt_.index_);

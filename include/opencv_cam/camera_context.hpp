@@ -21,6 +21,8 @@ namespace opencv_cam
   CXT_MACRO_MEMBER(codec_mjpg, bool, false)                       /* Use MJPG or Auto Find  */ \
   CXT_MACRO_MEMBER(exposure,int, 80)                              /* Exposure time of camera (dafault: 80)*/ \
   CXT_MACRO_MEMBER(brightness, int, 120)                          /* Artificially increase of brightness, 0-128, 64=no change*/ \
+  CXT_MACRO_MEMBER(saturation, int, 124)                          /* Change Saturation Values, 0-128, 64=no change*/ \
+  CXT_MACRO_MEMBER(auto_wb, bool, false)                          /* Auto White Balance \
   \
   CXT_MACRO_MEMBER(camera_info_path, std::string, "info.ini")     /* Camera info path */ \
   CXT_MACRO_MEMBER(camera_frame_id, std::string, "camera_frame")  /* Camera frame id */ \
