@@ -159,7 +159,9 @@ namespace opencv_cam
         RCLCPP_INFO(get_logger(), "EOF, stop publishing");
         break;
       }
-
+      if(cxt_.flip_x_){
+        cv::flip(frame,frame, 0);
+      }
       auto stamp = now();
 
       // Avoid copying image message if possible
