@@ -162,6 +162,9 @@ namespace opencv_cam
       if(cxt_.flip_x_){
         cv::flip(frame,frame, 0);
       }
+      if(cxt_.flip_y_){
+        cv::flip(frame,frame, 1);
+      }
       auto stamp = now();
 
       // Avoid copying image message if possible

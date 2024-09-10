@@ -24,6 +24,7 @@ namespace opencv_cam
   CXT_MACRO_MEMBER(saturation, int, 124)                          /* Change Saturation Values, 0-128, 64=no change*/ \
   CXT_MACRO_MEMBER(auto_wb, bool, false)                          /* Auto White Balance */ \
   CXT_MACRO_MEMBER(flip_x, bool, false)                           /* Flip the image over the X-Axis */ \
+  CXT_MACRO_MEMBER(flip_y, bool, false)                           /* Flip the image over the Y-Axis */ \
   \
   CXT_MACRO_MEMBER(camera_info_path, std::string, "info.ini")     /* Camera info path */ \
   CXT_MACRO_MEMBER(camera_frame_id, std::string, "camera_frame")  /* Camera frame id */ \
